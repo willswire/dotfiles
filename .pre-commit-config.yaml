@@ -1,0 +1,19 @@
+repos:
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.18.4
+    hooks:
+      - id: gitleaks
+  - repo: local
+    hooks:
+      - id: update-readme
+        name: Update README with tree output
+        entry: |
+          /bin/sh -c '
+          echo "# dotfiles" > README.md
+          echo "```console" >> README.md
+          tree -a -I ".git|.pre-commit-config.yaml|README.md" . >> README.md
+          echo "```" >> README.md
+          git add README.md
+          '
+        language: script
+        stages: [pre-commit]
