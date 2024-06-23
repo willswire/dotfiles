@@ -7,13 +7,6 @@ repos:
     hooks:
       - id: update-readme
         name: Update README with tree output
-        entry: |
-          /bin/sh -c '
-          echo "# dotfiles" > README.md
-          echo "```console" >> README.md
-          tree -a -I ".git|.pre-commit-config.yaml|README.md" . >> README.md
-          echo "```" >> README.md
-          git add README.md
-          '
+        entry: ./.update.sh
         language: script
         stages: [pre-commit]
