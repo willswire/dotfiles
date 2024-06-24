@@ -1,18 +1,26 @@
-[user]
-	name = William Walker
-	email = w_walker@icloud.com
-[fetch]
-	prune = true
-[commit]
-	gpgsign = true
-[push]
-	autoSetupRemote = true
-[gpg]
-	program = /usr/local/bin/gpg
+[includeIf "hasconfig:remote.*.url:https://gitlab.90cos.cdl.af.mil/**"]
+	path = ~/.work.gitconfig
+
+[includeIf "hasconfig:remote.*.url:https://github.com/**"]
+	path = ~/.personal.gitconfig
+
 [filter "lfs"]
-	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
+	required = true
+
+[fetch]
+	prune = true
+
+[commit]
+	gpgsign = true
+
 [init]
 	defaultBranch = main
+
+[push]
+	autoSetupRemote = true
+	
+[credential]
+	helper = osxkeychain

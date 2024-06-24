@@ -1,0 +1,6 @@
+[user]
+	name = William Walker
+	email = w_walker@icloud.com
+
+[gpg]
+	program = /usr/local/bin/gpg

@@ -1,0 +1,9 @@
+[user]
+	name = William Walker
+	email = william.walker.102@us.af.mil
+
+[gpg "x509"]
+	program = smimesign
+
+[gpg]
+	format = x509
