@@ -15,8 +15,8 @@
 │   └── .ssh
 │       ├── id_ed25519.pub
 │       └── known_hosts
-├── test
-│   └── .gitkeep
+├── tokenz
+│   └── .tokenz
 ├── vscode
 │   └── .vscode
 │       ├── argv.json

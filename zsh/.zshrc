@@ -26,6 +26,32 @@ alias gamend="git add .;git commit --amend --no-edit;git push --force"
 
 ## Secrets
 #
-# security add-generic-password -a "$USER" -s 'My Secret Token' -w 'qwerty123'
-# export ACCESS_TOKEN=$(security find-generic-password -s 'My Secret Token' -w)
+# Using the OS X Keychain to store and retrieve passwords
+# https://www.netmeister.org/blog/keychain-passwords.html
 ##
+source ~/.tokenz
+tokenz () {
+    # Check if a token name is provided
+    if [ -z "$1" ]; then
+        echo "Error: No token name provided."
+        return 1
+    fi
+    
+    # Add the token to the keychain
+    security add-generic-password -a "${USER}" -s "$1" -w
+    if [ $? -ne 0 ]; then
+        echo "Error: Failed to add token to keychain."
+        return 1
+    fi
+    
+    # Append the export command to the .tokenz file
+    export_command="export $1=\$(security find-generic-password -a ${USER} -s $1 -w)"
+    echo "${export_command}" >> ~/.tokenz
+    if [ $? -ne 0 ]; then
+        echo "Error: Failed to write to ~/.tokenz file."
+        return 1
+    fi
+    
+    echo "Token $1 added to keychain and export command appended to ~/.tokenz"
+    source ~/.tokenz
+}
