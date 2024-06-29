@@ -4,6 +4,9 @@
 [includeIf "hasconfig:remote.*.url:https://github.com/**"]
 	path = ~/.personal.gitconfig
 
+[alias]
+	please = push —-force-with-lease
+
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f

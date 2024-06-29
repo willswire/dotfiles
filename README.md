@@ -10,7 +10,9 @@
 │       ├── config.json
 │       └── daemon.json
 ├── git
-│   └── .gitconfig
+│   ├── .gitconfig
+│   ├── .personal.gitconfig
+│   └── .work.gitconfig
 ├── ssh
 │   └── .ssh
 │       ├── id_ed25519.pub
@@ -26,5 +28,5 @@
     ├── .hushlogin
     └── .zshrc
 
-13 directories, 11 files
+13 directories, 13 files
 ```
