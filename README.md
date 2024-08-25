@@ -19,14 +19,13 @@
 │       └── known_hosts
 ├── tokenz
 │   └── .tokenz
-├── vscode
-│   └── .vscode
-│       ├── argv.json
-│       └── extensions
-│           └── extensions.json
+├── zed
+│   └── .config
+│       └── zed
+│           └── settings.json
 └── zsh
     ├── .hushlogin
     └── .zshrc
 
-13 directories, 13 files
+13 directories, 12 files
 ```

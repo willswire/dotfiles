@@ -55,3 +55,9 @@ tokenz () {
     echo "Token $1 added to keychain and export command appended to ~/.tokenz"
     source ~/.tokenz
 }
+
+## OrbStack
+#
+# Config for shell init
+##
+source ~/.orbstack/shell/init.zsh 2>/dev/null || :

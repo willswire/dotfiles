@@ -1,1 +1,2 @@
 export CLOUDFLARE_ACCOUNT_ID=$(security find-generic-password -a willwalker -s CLOUDFLARE_ACCOUNT_ID -w)
+export OPENAI_AFI_EXPLORER=$(security find-generic-password -a willwalker -s OPENAI_AFI_EXPLORER -w)
