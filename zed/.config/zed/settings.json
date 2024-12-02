@@ -9,8 +9,8 @@
 {
   "assistant": {
     "default_model": {
-      "provider": "openai",
-      "model": "gpt-4o"
+      "provider": "zed.dev",
+      "model": "claude-3-5-sonnet-latest"
     },
     "version": "2"
   },
@@ -21,7 +21,40 @@
   "buffer_font_size": 16,
   "theme": {
     "mode": "system",
-    "light": "Catppuccin Frappé",
-    "dark": "Catppuccin Frappé"
+    "light": "Catppuccin Latte - No Italics",
+    "dark": "Catppuccin Mocha - No Italics"
+  },
+  "show_wrap_guides": true,
+  "wrap_guides": [75],
+  "lsp": {
+    "yaml-language-server": {
+      "settings": {
+        "yaml": {
+          "schemas": {
+            "https://raw.githubusercontent.com/zarf-dev/zarf/main/zarf.schema.json": [
+              "/*zarf.yaml"
+            ],
+            "https://raw.githubusercontent.com/defenseunicorns/maru-runner/main/tasks.schema.json": [
+              "/*tasks.yaml"
+            ],
+            "https://raw.githubusercontent.com/defenseunicorns/uds-cli/main/uds.schema.json": [
+              "/*uds-bundle.yaml"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "calls": {
+    "mute_on_join": true
+  },
+  "file_types": {
+    "Helm": [
+      "**/templates/**/*.tpl",
+      "**/templates/**/*.yaml",
+      "**/templates/**/*.yml",
+      "**/helmfile.d/**/*.yaml",
+      "**/helmfile.d/**/*.yml"
+    ]
   }
 }

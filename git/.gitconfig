@@ -1,11 +1,15 @@
-[includeIf "hasconfig:remote.*.url:https://gitlab.90cos.cdl.af.mil/**"]
-	path = ~/.work.gitconfig
+[user]
+	name = William Walker
+	email = william@defenseunicorns.com
+	signingkey = 39233F36
 
-[includeIf "hasconfig:remote.*.url:https://github.com/**"]
-	path = ~/.personal.gitconfig
+[includeIf "hasconfig:remote.*.url:https://github.com/willswire/**"]
+	email = w_walker@icloud.com
+	signingkey = 0BD90D90
 
 [alias]
 	please = push —-force-with-lease
+	amend = commit --amend --no-edit
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f
@@ -19,11 +23,14 @@
 [commit]
 	gpgsign = true
 
+[gpg]
+	program = /usr/local/bin/gpg
+
 [init]
 	defaultBranch = main
 
 [push]
 	autoSetupRemote = true
-	
+
 [credential]
 	helper = osxkeychain
