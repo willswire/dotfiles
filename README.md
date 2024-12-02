@@ -2,13 +2,14 @@
 
 ```console
 .
-├── .DS_Store
 ├── .gitignore
 ├── azure
 │   └── .azure
 │       └── config
 ├── git
 │   └── .gitconfig
+├── homebrew
+│   └── Brewfile
 ├── ssh
 │   └── .ssh
 │       ├── id_ed25519.pub
@@ -23,5 +24,5 @@
     ├── .hushlogin
     └── .zshrc
 
-11 directories, 10 files
+12 directories, 10 files
 ```
