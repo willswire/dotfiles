@@ -2,17 +2,13 @@
 
 ```console
 .
+├── .DS_Store
+├── .gitignore
 ├── azure
 │   └── .azure
 │       └── config
-├── docker
-│   └── .docker
-│       ├── config.json
-│       └── daemon.json
 ├── git
-│   ├── .gitconfig
-│   ├── .personal.gitconfig
-│   └── .work.gitconfig
+│   └── .gitconfig
 ├── ssh
 │   └── .ssh
 │       ├── id_ed25519.pub
@@ -27,5 +23,5 @@
     ├── .hushlogin
     └── .zshrc
 
-13 directories, 12 files
+11 directories, 10 files
 ```
