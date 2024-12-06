@@ -3,9 +3,8 @@
 	email = william@defenseunicorns.com
 	signingkey = 39233F36
 
-[includeIf "hasconfig:remote.*.url:https://github.com/willswire/**"]
-	email = w_walker@icloud.com
-	signingkey = 0BD90D90
+[includeIf "gitdir:~/**/willswire/**"]
+    path = ~/.gitconfig-willswire
 
 [alias]
 	please = push —-force-with-lease

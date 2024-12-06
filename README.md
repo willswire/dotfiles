@@ -7,13 +7,13 @@
 │   └── .azure
 │       └── config
 ├── git
-│   └── .gitconfig
+│   ├── .gitconfig
+│   └── .gitconfig-willswire
 ├── homebrew
 │   └── Brewfile
 ├── ssh
 │   └── .ssh
-│       ├── id_ed25519.pub
-│       └── known_hosts
+│       └── id_ed25519.pub
 ├── tokenz
 │   └── .tokenz
 ├── zed

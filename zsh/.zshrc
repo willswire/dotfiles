@@ -17,4 +17,4 @@ export HOMEBREW_BUNDLE_FILE_GLOBAL=$HOMEBREW_BUNDLE_FILE
 #
 # Path things
 ##
-export PATH="~/Developer/scripts:~/go/bin:$PATH"
+export PATH="/Users/willwalker/Developer/scripts:/Users/willwalker/go/bin:$PATH"
