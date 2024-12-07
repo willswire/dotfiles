@@ -14,8 +14,6 @@
 ├── ssh
 │   └── .ssh
 │       └── id_ed25519.pub
-├── tokenz
-│   └── .tokenz
 ├── zed
 │   └── .config
 │       └── zed
@@ -24,5 +22,5 @@
     ├── .hushlogin
     └── .zshrc
 
-12 directories, 10 files
+11 directories, 9 files
 ```

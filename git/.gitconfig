@@ -3,7 +3,7 @@
 	email = william@defenseunicorns.com
 	signingkey = 39233F36
 
-[includeIf "gitdir:~/**/github.com/willswire/**"]
+[includeIf "hasconfig:remote.*.url:https://github.com/willswire/**"]
     path = ~/.gitconfig-willswire
 
 [alias]
