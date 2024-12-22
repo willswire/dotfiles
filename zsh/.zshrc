@@ -23,4 +23,14 @@ brew() {
 #
 # Path things
 ##
-export PATH="/Users/willwalker/Developer/scripts:/Users/willwalker/go/bin:$PATH"
+SCRIPTS="/Users/willwalker/Developer/scripts"
+GO_BIN="/Users/willwalker/go/bin"
+CARGO_BIN="/Users/willwalker/.cargo/bin"
+PIPX_BIN="/Users/willwalker/.local/bin"
+export PATH="$SCRIPTS:$GO_BIN:$CARGO_BIN:$PIPX_BIN:$PATH"
+
+## Alias
+#
+# Less is more
+##
+alias zedlog="tail -f ~/Library/Logs/Zed/Zed.log"
