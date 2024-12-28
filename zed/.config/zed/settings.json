@@ -17,15 +17,8 @@
   "features": {
     "inline_completion_provider": "none"
   },
-  "ui_font_size": 12,
-  "buffer_font_size": 12,
-  "theme": {
-    "mode": "system",
-    "light": "Catppuccin Latte - No Italics",
-    "dark": "Catppuccin Mocha - No Italics"
-  },
-  "show_wrap_guides": true,
-  "wrap_guides": [75],
+  "ui_font_size": 14,
+  "buffer_font_size": 14,
   "lsp": {
     "yaml-language-server": {
       "settings": {

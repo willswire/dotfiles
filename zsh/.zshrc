@@ -1,8 +1,10 @@
-## Shell Appearance
+## Shell Setup
 #
 # Vanity configurations
 ##
-export PROMPT="WW %1~ > ";
+export PROMPT='%2~ > ';
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+autoload -Uz compinit && compinit
 
 ## Homebrew
 #
@@ -33,4 +35,10 @@ export PATH="$SCRIPTS:$GO_BIN:$CARGO_BIN:$PIPX_BIN:$PATH"
 #
 # Less is more
 ##
-alias zedlog="tail -f ~/Library/Logs/Zed/Zed.log"
+zed() {
+   if [[ "$1" = "--log" ]]; then
+       command tail -f ~/Library/Logs/Zed/Zed.log
+   else
+       command zed "$@"
+   fi
+}
