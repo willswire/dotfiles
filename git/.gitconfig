@@ -7,7 +7,7 @@
     path = ~/.gitconfig-willswire
 
 [alias]
-	please = push —-force-with-lease
+	please = push --force-with-lease
 	amend = commit --amend --no-edit
 
 [filter "lfs"]

@@ -16,8 +16,12 @@ export HOMEBREW_BUNDLE_FILE="~/Brewfile"
 export HOMEBREW_BUNDLE_FILE_GLOBAL=$HOMEBREW_BUNDLE_FILE
 brew() {
     command brew "$@"
-    if [[ "$1" = "install" ]]; then
+    if [[ "$1" = "install" || "$1" = "upgrade" ]]; then
+        # Dump the Brewfile after install or upgrade
         command brew bundle dump -f
+    elif [[ "$1" = "update" ]]; then
+        # Run a cleanup after updating
+        command brew cleanup
     fi
 }
 
@@ -42,3 +46,6 @@ zed() {
        command zed "$@"
    fi
 }
+alias tf=tofu
+alias l=ls
+alias k=kubectl
