@@ -11,9 +11,6 @@
 │   └── .gitconfig-willswire
 ├── homebrew
 │   └── Brewfile
-├── ssh
-│   └── .ssh
-│       └── id_ed25519.pub
 ├── zed
 │   └── .config
 │       └── zed
@@ -22,5 +19,5 @@
     ├── .hushlogin
     └── .zshrc
 
-11 directories, 9 files
+9 directories, 8 files
 ```
