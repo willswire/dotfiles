@@ -33,7 +33,15 @@ SCRIPTS="/Users/willwalker/Developer/scripts"
 GO_BIN="/Users/willwalker/go/bin"
 CARGO_BIN="/Users/willwalker/.cargo/bin"
 PIPX_BIN="/Users/willwalker/.local/bin"
-export PATH="$SCRIPTS:$GO_BIN:$CARGO_BIN:$PIPX_BIN:$PATH"
+ORACLE_BIN="/opt/oracle/"
+export PATH="$SCRIPTS:$ORACLE_BIN:$GO_BIN:$CARGO_BIN:$PIPX_BIN:$PATH"
+
+## NodeJS sucks
+#
+# Setting up NVM for Node version mgmgt
+##
+export NVM_DIR="$HOME/.nvm"
+/opt/homebrew/opt/nvm/nvm.sh
 
 ## Alias
 #

@@ -34,7 +34,8 @@
               "/*zarf.yaml"
             ],
             "https://raw.githubusercontent.com/defenseunicorns/maru-runner/main/tasks.schema.json": [
-              "/*tasks.yaml"
+              "/*tasks.yaml",
+              "/tasks/test.yaml"
             ],
             "https://raw.githubusercontent.com/defenseunicorns/uds-cli/main/uds.schema.json": [
               "/*uds-bundle.yaml"
@@ -61,6 +62,12 @@
       "**/templates/**/*.yml",
       "**/helmfile.d/**/*.yaml",
       "**/helmfile.d/**/*.yml"
-    ]
+    ],
+    "COBOL": ["*.pco"]
+  },
+  "languages": {
+    "SQL": {
+      "format_on_save": "off"
+    }
   }
 }
