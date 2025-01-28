@@ -16,12 +16,12 @@ export HOMEBREW_BUNDLE_FILE="~/Brewfile"
 export HOMEBREW_BUNDLE_FILE_GLOBAL=$HOMEBREW_BUNDLE_FILE
 brew() {
     command brew "$@"
-    if [[ "$1" = "install" || "$1" = "upgrade" ]]; then
+    if [[ "$1" = "install" || "$1" = "upgrade" || "$1" = "update" ]]; then
         # Dump the Brewfile after install or upgrade
         command brew bundle dump -f
-    elif [[ "$1" = "update" ]]; then
+    elif [[ "$1" = "cleanup" ]]; then
         # Run a cleanup after updating
-        command brew cleanup
+        command brew bundle -f cleanup
     fi
 }
 
