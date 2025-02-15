@@ -41,7 +41,7 @@ export PATH="$SCRIPTS:$ORACLE_BIN:$GO_BIN:$CARGO_BIN:$PIPX_BIN:$PATH"
 # Setting up NVM for Node version mgmgt
 ##
 export NVM_DIR="$HOME/.nvm"
-/opt/homebrew/opt/nvm/nvm.sh
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
 
 ## Alias
 #
@@ -57,3 +57,11 @@ zed() {
 alias tf=tofu
 alias l=ls
 alias k=kubectl
+
+## Docker
+#
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+##
+fpath=(/Users/willwalker/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
