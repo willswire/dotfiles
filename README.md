@@ -7,8 +7,7 @@
 │   └── .azure
 │       └── config
 ├── git
-│   ├── .gitconfig
-│   └── .gitconfig-willswire
+│   └── .gitconfig
 ├── homebrew
 │   └── Brewfile
 ├── zed
@@ -19,5 +18,5 @@
     ├── .hushlogin
     └── .zshrc
 
-9 directories, 8 files
+9 directories, 7 files
 ```

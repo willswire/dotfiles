@@ -1,14 +1,17 @@
 [user]
 	name = William Walker
-	email = william@defenseunicorns.com
-	signingkey = 39233F36
-
-[includeIf "hasconfig:remote.*.url:https://github.com/willswire/**"]
-    path = ~/.gitconfig-willswire
 
 [alias]
+	amend = commit --all --amend --no-edit
 	please = push --force-with-lease
-	amend = commit --amend --no-edit
+    play = "!f() { \
+        git config user.email 'w_walker@icloud.com' && \
+        git config user.signingkey '0BD90D90'; \
+    }; f"
+    work = "!f() { \
+        git config user.email 'william@defenseunicorns.com' && \
+        git config user.signingkey '39233F36'; \
+    }; f"
 
 [fetch]
 	prune = true

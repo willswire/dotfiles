@@ -14,15 +14,8 @@
     "light": "Catppuccin Latte",
     "dark": "Catppuccin Macchiato"
   },
-  "assistant": {
-    "default_model": {
-      "provider": "openai",
-      "model": "o1"
-    },
-    "version": "2"
-  },
   "features": {
-    "inline_completion_provider": "none"
+    "edit_prediction_provider": "zed"
   },
   "ui_font_size": 14,
   "buffer_font_size": 10.0,
