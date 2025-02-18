@@ -10,12 +10,6 @@
 	please = push --force-with-lease
 	amend = commit --amend --no-edit
 
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-
 [fetch]
 	prune = true
 
