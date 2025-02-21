@@ -13,10 +13,11 @@
 ├── zed
 │   └── .config
 │       └── zed
+│           ├── conversations
 │           └── settings.json
 └── zsh
     ├── .hushlogin
     └── .zshrc
 
-9 directories, 7 files
+10 directories, 7 files
 ```

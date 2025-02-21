@@ -18,8 +18,8 @@
   "remove_trailing_whitespace_on_save": false,
   "theme": {
     "mode": "system",
-    "light": "Catppuccin Latte",
-    "dark": "Catppuccin Macchiato"
+    "light": "One Light",
+    "dark": "One Dark"
   },
   "features": {
     "edit_prediction_provider": "zed"
