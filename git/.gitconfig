@@ -6,11 +6,11 @@
 	please = push --force-with-lease
     play = "!f() { \
         git config user.email 'w_walker@icloud.com' && \
-        git config user.signingkey '0BD90D90'; \
+        git config user.signingkey '1A090154'; \
     }; f"
     work = "!f() { \
         git config user.email 'william@defenseunicorns.com' && \
-        git config user.signingkey '39233F36'; \
+        git config user.signingkey '6E8C69E8'; \
     }; f"
 
 [fetch]
