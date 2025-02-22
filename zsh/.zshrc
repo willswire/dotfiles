@@ -43,7 +43,7 @@ export PATH="$SCRIPTS:$ORACLE_BIN:$GO_BIN:$CARGO_BIN:$PIPX_BIN:$PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
 
-## Alias
+## Aliases and Functions
 #
 # Less is more
 ##
@@ -53,6 +53,58 @@ zed() {
    else
        command zed "$@"
    fi
+}
+cdev() {
+  if [ "$#" -eq 0 ]; then
+    echo "Usage: cdev <directory-name>"
+    return 1
+  fi
+
+  # Search for the directory, suppressing error messages
+  local target
+  target=$(find ~/Developer -type d -name "$1" 2>/dev/null | head -n 1)
+  
+  if [ -n "$target" ]; then
+    cd "$target" || return
+  else
+    echo "Directory '$1' not found in ~/Developer"
+  fi
+}
+devclone() {
+  if [ "$#" -eq 0 ]; then
+    echo "Usage: devclone <repository-url>"
+    return 1
+  fi
+
+  local url="$1"
+  local host repo_path
+
+  # Extract hostname and repository path from the URL
+  if [[ "$url" == https://* ]]; then
+    # For HTTPS URLs, e.g. https://github.com/owner/repo.git
+    local rest="${url#https://}"
+    host="${rest%%/*}"
+    repo_path="${rest#*/}"
+  elif [[ "$url" == git@*:* ]]; then
+    # For SSH URLs, e.g. git@github.com:owner/repo.git
+    local rest="${url#git@}"
+    host="${rest%%:*}"
+    repo_path="${rest#*:}"
+  else
+    echo "Unsupported URL format: $url"
+    return 1
+  fi
+
+  # Remove trailing .git from the repository path, if present
+  repo_path="${repo_path%.git}"
+
+  # Construct the target directory path under ~/Developer
+  local target_dir=~/Developer/"${host}"/"${repo_path}"
+
+  # Create the parent directories if they don't exist
+  mkdir -p "$(dirname "$target_dir")"
+
+  git clone "$url" "$target_dir"
 }
 alias tf=tofu
 alias l=ls

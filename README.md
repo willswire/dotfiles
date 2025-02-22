@@ -6,6 +6,11 @@
 ├── azure
 │   └── .azure
 │       └── config
+├── gh
+│   └── .config
+│       └── gh
+│           ├── config.yml
+│           └── hosts.yml
 ├── git
 │   └── .gitconfig
 ├── homebrew
@@ -14,10 +19,15 @@
 │   └── .config
 │       └── zed
 │           ├── conversations
-│           └── settings.json
+│           ├── prompts
+│           │   └── prompts-library-db.0.mdb
+│           │       ├── data.mdb
+│           │       └── lock.mdb
+│           ├── settings.json
+│           └── themes
 └── zsh
     ├── .hushlogin
     └── .zshrc
 
-10 directories, 7 files
+16 directories, 11 files
 ```
