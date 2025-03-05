@@ -3,6 +3,7 @@
 ```console
 .
 ├── .gitignore
+├── CHEAT.md
 ├── azure
 │   └── .azure
 │       └── config
@@ -29,5 +30,5 @@
     ├── .hushlogin
     └── .zshrc
 
-16 directories, 11 files
+16 directories, 12 files
 ```
