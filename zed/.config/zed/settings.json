@@ -10,7 +10,7 @@
   "assistant": {
     "default_model": {
       "provider": "zed.dev",
-      "model": "claude-3-5-sonnet-latest"
+      "model": "claude-3-7-sonnet-latest"
     },
     "version": "2"
   },
@@ -67,7 +67,8 @@
       "**/helmfile.d/**/*.yaml",
       "**/helmfile.d/**/*.yml"
     ],
-    "COBOL": ["*.pco"]
+    "COBOL": ["*.pco"],
+    "JSON5": ["*.json5"]
   },
   "languages": {
     "SQL": {
