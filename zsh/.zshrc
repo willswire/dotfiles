@@ -106,6 +106,23 @@ devclone() {
 
   git clone "$url" "$target_dir"
 }
+convert_ascii_to_utf8() {
+    local folder="$1"
+    # Recursively find all files in the given folder
+    find "$folder" -type f | while read -r file; do
+        # Check if the file is ASCII text using the 'file' command
+        if file "$file" | grep -qi 'ASCII'; then
+            echo "Converting $file from ASCII to UTF-8..."
+            # Convert from ASCII to UTF-8 by redirecting output to a temporary file
+            if iconv -f ASCII -t UTF-8 "$file" > "$file.new"; then
+                mv "$file.new" "$file"
+            else
+                echo "Conversion failed for $file"
+                rm -f "$file.new"
+            fi
+        fi
+    done
+}
 alias tf=tofu
 alias l=ls
 alias k=kubectl

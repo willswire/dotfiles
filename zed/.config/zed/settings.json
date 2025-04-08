@@ -63,9 +63,7 @@
     "Helm": [
       "**/templates/**/*.tpl",
       "**/templates/**/*.yaml",
-      "**/templates/**/*.yml",
-      "**/helmfile.d/**/*.yaml",
-      "**/helmfile.d/**/*.yml"
+      "**/helmfile.d/**/*.yaml"
     ],
     "COBOL": ["*.pco"],
     "JSON5": ["*.json5"]
