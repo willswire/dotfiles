@@ -9,6 +9,9 @@
 │   └── .azure
 │       └── config
 ├── CHEAT.md
+├── claude
+│   └── .claude
+│       └── CLAUDE.md
 ├── gh
 │   └── .config
 │       └── gh
@@ -26,5 +29,5 @@
     ├── .hushlogin
     └── .zshrc
 
-12 directories, 12 files
+14 directories, 13 files
 ```
