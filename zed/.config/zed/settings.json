@@ -8,6 +8,10 @@
 // from the command palette or from `Zed` application menu.
 {
   "assistant": {
+    "inline_assistant_model": {
+      "provider": "zed.dev",
+      "model": "claude-3-7-sonnet-latest"
+    },
     "default_model": {
       "provider": "zed.dev",
       "model": "claude-3-7-sonnet-latest"
@@ -28,7 +32,7 @@
     "git_status": true
   },
   "ui_font_size": 14,
-  "buffer_font_size": 13.0,
+  "buffer_font_size": 14,
   "lsp": {
     "yaml-language-server": {
       "settings": {
@@ -65,11 +69,18 @@
       "**/templates/**/*.yaml",
       "**/helmfile.d/**/*.yaml"
     ],
-    "COBOL": ["*.pco"],
-    "JSON5": ["*.json5"]
+    "COBOL": [
+      "*.pco"
+    ],
+    "JSONC": [
+      "*.json5"
+    ]
   },
   "languages": {
     "SQL": {
+      "format_on_save": "off"
+    },
+    "JSONC": {
       "format_on_save": "off"
     }
   }

@@ -24,10 +24,11 @@
 ├── zed
 │   └── .config
 │       └── zed
+│           ├── keymap.json
 │           └── settings.json
 └── zsh
     ├── .hushlogin
     └── .zshrc
 
-14 directories, 13 files
+14 directories, 14 files
 ```
