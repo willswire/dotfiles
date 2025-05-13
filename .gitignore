@@ -1,3 +1,6 @@
+# macOS users are dumb
 .DS_Store
-*.mdb
-conversations/
+
+# zed assistant things
+zed/**/conversations/
+zed/**/prompts/
