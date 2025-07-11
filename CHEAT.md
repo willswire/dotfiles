@@ -24,7 +24,7 @@ aws ssm start-session \
 host.docker.internal
 ```
 
-## PFCTL Port Redirect (macOS)
+## PFCTL Port Redirect
 
 ```shell
 # Create a file /etc/pf.anchors/dev with the following rules:
