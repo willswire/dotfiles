@@ -7,23 +7,23 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "assistant": {
+  "agent": {
+    "always_allow_tool_actions": true,
     "inline_assistant_model": {
       "provider": "zed.dev",
-      "model": "claude-3-7-sonnet-latest"
+      "model": "claude-sonnet-4"
     },
     "default_model": {
       "provider": "zed.dev",
-      "model": "claude-3-7-sonnet-latest"
+      "model": "claude-sonnet-4"
     },
-    "version": "2"
   },
   "hard_tabs": false,
   "remove_trailing_whitespace_on_save": false,
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "One Dark"
+    "dark": "Catppuccin Macchiato"
   },
   "features": {
     "edit_prediction_provider": "zed"
@@ -81,6 +81,9 @@
       "format_on_save": "off"
     },
     "JSONC": {
+      "format_on_save": "off"
+    },
+    "TypeScript": {
       "format_on_save": "off"
     }
   }

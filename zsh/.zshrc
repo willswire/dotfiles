@@ -3,17 +3,31 @@
 # Vanity configurations
 ##
 export PROMPT='%2~ > ';
+
+# Load syntax highlighting
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-autoload -Uz compinit && compinit
+
+# Lazy load completions
+autoload -Uz compinit
+if [[ -n ${ZDOTDIR:-${HOME}}/.zcompdump(#qNmh+24) ]]; then
+    compinit -d ${ZDOTDIR:-${HOME}}/.zcompdump
+else
+    compinit -C -d ${ZDOTDIR:-${HOME}}/.zcompdump
+fi
 
 ## Homebrew
 #
 # Configurations and customizations
 ##
-eval "$(/opt/homebrew/bin/brew shellenv)";
-export HOMEBREW_NO_ENV_HINTS=1;
+export HOMEBREW_NO_ENV_HINTS=1
 export HOMEBREW_BUNDLE_FILE="~/Brewfile"
 export HOMEBREW_BUNDLE_FILE_GLOBAL=$HOMEBREW_BUNDLE_FILE
+
+# Lazy load brew shellenv
+if [[ -z "$HOMEBREW_PREFIX" ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 brew() {
     command brew "$@"
     if [[ "$1" = "install" || "$1" = "upgrade" || "$1" = "update" ]]; then
@@ -29,19 +43,26 @@ brew() {
 #
 # Path things
 ##
-SCRIPTS="/Users/$USER/Developer/scripts"
-GO_BIN="/Users/$USER/go/bin"
-CARGO_BIN="/Users/$USER/.cargo/bin"
-PIPX_BIN="/Users/$USER/.local/bin"
-ORACLE_BIN="/opt/oracle/"
-export PATH="$SCRIPTS:$ORACLE_BIN:$GO_BIN:$CARGO_BIN:$PIPX_BIN:$PATH"
+typeset -U path
+path=(
+    "/Users/$USER/Developer/scripts"
+    "/opt/oracle"
+    "/Users/$USER/go/bin"
+    "/Users/$USER/.cargo/bin"
+    "/Users/$USER/.local/bin"
+    $path
+)
 
 ## NodeJS sucks
 #
-# Setting up NVM for Node version mgmgt
+# Setting up NVM for Node version mgmgt (lazy loaded)
 ##
 export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
+nvm() {
+    unfunction nvm
+    [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
+    nvm "$@"
+}
 
 ## Aliases and Functions
 #
@@ -63,7 +84,7 @@ cdev() {
   # Search for the directory, suppressing error messages
   local target
   target=$(find ~/Developer -type d -name "$1" 2>/dev/null | head -n 1)
-  
+
   if [ -n "$target" ]; then
     cd "$target" || return
   else
@@ -131,6 +152,6 @@ alias k=kubectl
 #
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
 ##
-fpath=(/Users/william/.docker/completions $fpath)
-autoload -Uz compinit
-compinit
+if [[ -d /Users/$USER/.docker/completions ]]; then
+    fpath=("/Users/$USER/.docker/completions" $fpath)
+fi

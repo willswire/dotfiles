@@ -20,7 +20,7 @@
 	gpgsign = true
 
 [gpg]
-	program = /usr/local/bin/gpg
+	program = gpg # the full path is not required
 
 [init]
 	defaultBranch = main
