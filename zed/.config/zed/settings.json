@@ -16,7 +16,7 @@
     "default_model": {
       "provider": "zed.dev",
       "model": "claude-sonnet-4"
-    },
+    }
   },
   "hard_tabs": false,
   "remove_trailing_whitespace_on_save": false,
@@ -69,17 +69,10 @@
       "**/templates/**/*.yaml",
       "**/helmfile.d/**/*.yaml"
     ],
-    "COBOL": [
-      "*.pco"
-    ],
-    "JSONC": [
-      "*.json5"
-    ]
+    "COBOL": ["*.pco"],
+    "JSONC": ["*.json5"]
   },
   "languages": {
-    "SQL": {
-      "format_on_save": "off"
-    },
     "JSONC": {
       "format_on_save": "off"
     },

@@ -52,6 +52,13 @@ path=(
     "/Users/$USER/.local/bin"
     $path
 )
+SCRIPTS="/Users/$USER/Developer/scripts"
+GO_BIN="/Users/$USER/go/bin"
+CARGO_BIN="/Users/$USER/.cargo/bin"
+PIPX_BIN="/Users/$USER/.local/bin"
+ORACLE_BIN="/opt/oracle/"
+BUN_BIN="/Users/$USER/.bun/bin"
+export PATH="$SCRIPTS:$ORACLE_BIN:$GO_BIN:$CARGO_BIN:$PIPX_BIN:$BUN_BIN:$PATH"
 
 ## NodeJS sucks
 #
