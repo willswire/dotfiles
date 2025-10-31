@@ -2,7 +2,7 @@
 #
 # Vanity configurations
 ##
-export PROMPT='%2~ > ';
+export PROMPT='%1~ > ';
 
 # Load syntax highlighting
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -45,6 +45,7 @@ brew() {
 ##
 typeset -U path
 path=(
+    "/Users/$USER/rapidfort"
     "/Users/$USER/Developer/scripts"
     "/opt/oracle"
     "/Users/$USER/go/bin"
