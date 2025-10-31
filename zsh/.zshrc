@@ -45,9 +45,7 @@ brew() {
 ##
 typeset -U path
 path=(
-    "/Users/$USER/rapidfort"
     "/Users/$USER/Developer/scripts"
-    "/opt/oracle"
     "/Users/$USER/go/bin"
     "/Users/$USER/.cargo/bin"
     "/Users/$USER/.local/bin"
@@ -56,10 +54,7 @@ path=(
 SCRIPTS="/Users/$USER/Developer/scripts"
 GO_BIN="/Users/$USER/go/bin"
 CARGO_BIN="/Users/$USER/.cargo/bin"
-PIPX_BIN="/Users/$USER/.local/bin"
-ORACLE_BIN="/opt/oracle/"
-BUN_BIN="/Users/$USER/.bun/bin"
-export PATH="$SCRIPTS:$ORACLE_BIN:$GO_BIN:$CARGO_BIN:$PIPX_BIN:$BUN_BIN:$PATH"
+export PATH="$SCRIPTS:$GO_BIN:$CARGO_BIN:$PATH"
 
 ## NodeJS sucks
 #
@@ -76,13 +71,6 @@ nvm() {
 #
 # Less is more
 ##
-zed() {
-   if [[ "$1" = "--log" ]]; then
-       command tail -f ~/Library/Logs/Zed/Zed.log
-   else
-       command zed "$@"
-   fi
-}
 cdev() {
   if [ "$#" -eq 0 ]; then
     echo "Usage: cdev <directory-name>"
@@ -134,23 +122,6 @@ devclone() {
   mkdir -p "$(dirname "$target_dir")"
 
   git clone "$url" "$target_dir"
-}
-convert_ascii_to_utf8() {
-    local folder="$1"
-    # Recursively find all files in the given folder
-    find "$folder" -type f | while read -r file; do
-        # Check if the file is ASCII text using the 'file' command
-        if file "$file" | grep -qi 'ASCII'; then
-            echo "Converting $file from ASCII to UTF-8..."
-            # Convert from ASCII to UTF-8 by redirecting output to a temporary file
-            if iconv -f ASCII -t UTF-8 "$file" > "$file.new"; then
-                mv "$file.new" "$file"
-            else
-                echo "Conversion failed for $file"
-                rm -f "$file.new"
-            fi
-        fi
-    done
 }
 alias tf=tofu
 alias l=ls

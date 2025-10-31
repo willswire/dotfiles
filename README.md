@@ -5,9 +5,6 @@
 ├── .gitignore
 ├── .pre-commit-config.yaml
 ├── .update.sh
-├── azure
-│   └── .azure
-│       └── config
 ├── CHEAT.md
 ├── claude
 │   └── .claude
@@ -30,5 +27,5 @@
     ├── .hushlogin
     └── .zshrc
 
-14 directories, 14 files
+12 directories, 13 files
 ```
