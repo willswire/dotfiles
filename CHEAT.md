@@ -24,6 +24,13 @@ aws ssm start-session \
 host.docker.internal
 ```
 
+## Kubernetes
+
+```shell
+# one-shot debugger
+kubectl run oras-dev --image-pull-policy Never --labels 'zarf.dev/agent'=ignore --image=registry1.dso.mil/chainguard/cgr.dev/chainguard/wolfi-base --command -- tail -f /dev/null
+```
+
 ## PFCTL Port Redirect
 
 ```shell

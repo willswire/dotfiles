@@ -7,7 +7,7 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "soft_wrap": "prefer_line",
+  "soft_wrap": "editor_width",
   "agent": {
     "default_profile": "write",
     "always_allow_tool_actions": true,
