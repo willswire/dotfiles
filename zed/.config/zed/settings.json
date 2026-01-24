@@ -16,8 +16,8 @@
       "model": "claude-sonnet-4-5-latest"
     },
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-sonnet-4"
+      "provider": "openai",
+      "model": "gpt-5"
     }
   },
   "hard_tabs": false,
