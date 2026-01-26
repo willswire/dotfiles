@@ -30,11 +30,14 @@ fi
 
 brew() {
     command brew "$@"
-    if [[ "$1" = "install" || "$1" = "upgrade" || "$1" = "update" ]]; then
-        # Dump the Brewfile after install or upgrade
-        command brew bundle dump -f
+    if [[ "$1" = "upgrade" ]]; then
+        # Upgrade brew packages based on Brewfile
+        command brew bundle install --upgrade
+    elif [[ "$1" = "install" ]]; then
+        # Add the new formula to the Brewfile
+        command brew bundle add "$2"
     elif [[ "$1" = "cleanup" ]]; then
-        # Run a cleanup after updating
+        # Run a cleanup
         command brew bundle -f cleanup
     fi
 }
