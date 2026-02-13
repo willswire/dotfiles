@@ -12,12 +12,12 @@
     "default_profile": "write",
     "always_allow_tool_actions": true,
     "inline_assistant_model": {
-      "provider": "anthropic",
-      "model": "claude-sonnet-4-5-latest"
+      "provider": "openai",
+      "model": "gpt-5.3-codex-low"
     },
     "default_model": {
       "provider": "openai",
-      "model": "gpt-5"
+      "model": "gpt-5.3-codex-high"
     }
   },
   "hard_tabs": false,
@@ -26,9 +26,6 @@
     "mode": "system",
     "light": "One Light",
     "dark": "Catppuccin Macchiato"
-  },
-  "features": {
-    "edit_prediction_provider": "zed"
   },
   "tabs": {
     "git_status": true
@@ -51,13 +48,6 @@
               "/*uds-bundle.yaml"
             ]
           }
-        }
-      }
-    },
-    "pyright": {
-      "settings": {
-        "python": {
-          "pythonPath": ".venv/bin/python"
         }
       }
     }
