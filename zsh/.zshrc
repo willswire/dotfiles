@@ -75,39 +75,59 @@ nvm() {
 # Less is more
 ##
 cdev() {
-  if [ "$#" -eq 0 ]; then
-    echo "Usage: cdev <directory-name>"
+  local dev_root="${HOME}/Developer"
+  local query="$1"
+
+  if [[ $# -ne 1 ]]; then
+    echo "Usage: cdev <directory-name|path>"
     return 1
   fi
 
-  # Search for the directory, suppressing error messages
-  local target
-  target=$(find ~/Developer -type d -name "$1" 2>/dev/null | head -n 1)
-
-  if [ -n "$target" ]; then
-    cd "$target" || return
-  else
-    echo "Directory '$1' not found in ~/Developer"
+  # Fast-path for explicit paths.
+  if [[ -d "$query" ]]; then
+    cd "$query" || return
+    return
   fi
+  if [[ -d "${dev_root}/${query}" ]]; then
+    cd "${dev_root}/${query}" || return
+    return
+  fi
+
+  local target
+  # Find first matching directory and stop immediately.
+  target="$(find "$dev_root" \
+    \( -name .git -o -name node_modules -o -name .venv -o -name target -o -name dist \) -prune -false -o \
+    -type d -name "$query" -print -quit 2>/dev/null)"
+
+  if [[ -n "$target" ]]; then
+    cd "$target" || return
+    return
+  fi
+
+  echo "Directory '$query' not found in ${dev_root}"
+  return 1
 }
 devclone() {
-  if [ "$#" -eq 0 ]; then
+  local dev_root="${HOME}/Developer"
+  local url="$1"
+  local host repo_path rest target_dir
+
+  if [[ $# -ne 1 ]]; then
     echo "Usage: devclone <repository-url>"
     return 1
   fi
 
-  local url="$1"
-  local host repo_path
-
-  # Extract hostname and repository path from the URL
-  if [[ "$url" == https://* ]]; then
-    # For HTTPS URLs, e.g. https://github.com/owner/repo.git
-    local rest="${url#https://}"
+  # Supported examples:
+  # - https://github.com/owner/repo.git
+  # - ssh://git@github.com/owner/repo.git
+  # - git@github.com:owner/repo.git
+  if [[ "$url" == https://* || "$url" == http://* || "$url" == ssh://* ]]; then
+    rest="${url#*://}"        # Strip scheme
+    rest="${rest#*@}"         # Strip optional user@
     host="${rest%%/*}"
     repo_path="${rest#*/}"
-  elif [[ "$url" == git@*:* ]]; then
-    # For SSH URLs, e.g. git@github.com:owner/repo.git
-    local rest="${url#git@}"
+  elif [[ "$url" == *@*:* ]]; then
+    rest="${url#*@}"
     host="${rest%%:*}"
     repo_path="${rest#*:}"
   else
@@ -115,16 +135,25 @@ devclone() {
     return 1
   fi
 
-  # Remove trailing .git from the repository path, if present
   repo_path="${repo_path%.git}"
+  repo_path="${repo_path#/}"
+  repo_path="${repo_path%%/}"
 
-  # Construct the target directory path under ~/Developer
-  local target_dir=~/Developer/"${host}"/"${repo_path}"
+  if [[ -z "$host" || -z "$repo_path" || "$repo_path" == "$rest" ]]; then
+    echo "Could not parse repository URL: $url"
+    return 1
+  fi
 
-  # Create the parent directories if they don't exist
-  mkdir -p "$(dirname "$target_dir")"
+  target_dir="${dev_root}/${host}/${repo_path}"
 
-  git clone "$url" "$target_dir"
+  if [[ -e "$target_dir" ]]; then
+    echo "Target already exists: $target_dir"
+    return 1
+  fi
+
+  mkdir -p "$(dirname "$target_dir")" || return
+  git clone -- "$url" "$target_dir" || return
+  cd "$target_dir" || return
 }
 alias tf=tofu
 alias l=ls
