@@ -4,13 +4,18 @@
 [alias]
 	amend = commit --all --amend --no-edit
 	please = push --force-with-lease
-    play = "!f() { \
+    home = "!f() { \
         git config user.email 'w_walker@icloud.com' && \
         git config user.signingkey '1A090154'; \
     }; f"
     work = "!f() { \
         git config user.email 'william@defenseunicorns.com' && \
         git config user.signingkey '6E8C69E8'; \
+    }; f"
+    mil = "!f() { \
+        git config user.email 'william.m.walker159.ctr@us.navy.mil' && \
+        git config --local gpg.x509.program smimesign && \
+        git config --local gpg.format x509; \
     }; f"
 
 [fetch]
