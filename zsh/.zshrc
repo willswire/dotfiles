@@ -54,10 +54,6 @@ path=(
     "/Users/$USER/.local/bin"
     $path
 )
-SCRIPTS="/Users/$USER/Developer/scripts"
-GO_BIN="/Users/$USER/go/bin"
-CARGO_BIN="/Users/$USER/.cargo/bin"
-export PATH="$SCRIPTS:$GO_BIN:$CARGO_BIN:$PATH"
 
 ## NodeJS sucks
 #
