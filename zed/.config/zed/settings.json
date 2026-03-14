@@ -1,4 +1,9 @@
 {
+  "disable_ai": true,
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
   "soft_wrap": "editor_width",
   "agent": {
     "default_profile": "write",
