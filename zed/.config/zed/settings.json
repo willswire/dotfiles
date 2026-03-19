@@ -1,5 +1,5 @@
 {
-  "disable_ai": true,
+  "disable_ai": false,
   "telemetry": {
     "diagnostics": false,
     "metrics": false
@@ -46,8 +46,12 @@
       "**/templates/**/*.yaml",
       "**/helmfile.d/**/*.yaml"
     ],
-    "COBOL": ["*.pco"],
-    "JSONC": ["*.json5"]
+    "COBOL": [
+      "*.pco"
+    ],
+    "JSONC": [
+      "*.json5"
+    ]
   },
   "languages": {
     "JSONC": {

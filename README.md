@@ -5,7 +5,6 @@
 ├── .gitignore
 ├── .pre-commit-config.yaml
 ├── .update.sh
-├── CHEAT.md
 ├── claude
 │   └── .claude
 │       └── CLAUDE.md
@@ -22,13 +21,12 @@
 │   └── .gitconfig
 ├── homebrew
 │   └── Brewfile
-├── lima
-│   └── .lima
-│       └── devvm
-│           └── lima.yaml
 ├── ssh
 │   └── .ssh
 │       └── config
+├── trunk
+│   ├── CHEAT.md
+│   └── vm.yaml
 ├── zed
 │   └── .config
 │       └── zed
@@ -38,5 +36,42 @@
     ├── .hushlogin
     └── .zshrc
 
-20 directories, 16 files
+18 directories, 16 files
+```
+.
+├── .gitignore
+├── .pre-commit-config.yaml
+├── .update.sh
+├── claude
+│   └── .claude
+│       └── CLAUDE.md
+├── gh
+│   └── .config
+│       └── gh
+│           ├── config.yml
+│           └── hosts.yml
+├── ghostty
+│   └── .config
+│       └── ghostty
+│           └── config
+├── git
+│   └── .gitconfig
+├── homebrew
+│   └── Brewfile
+├── ssh
+│   └── .ssh
+│       └── config
+├── trunk
+│   ├── CHEAT.md
+│   └── vm.yaml
+├── zed
+│   └── .config
+│       └── zed
+│           ├── keymap.json
+│           └── settings.json
+└── zsh
+    ├── .hushlogin
+    └── .zshrc
+
+18 directories, 16 files
 ```

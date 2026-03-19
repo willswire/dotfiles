@@ -1,0 +1,32 @@
+# vm.yaml
+# A flattened Lima VM template for aarch64 (Apple Silicon) dev environments.
+# Includes: Ubuntu 24.04 LTS, Homebrew (Linuxbrew), Zsh, and Docker.
+#
+# Defaults: https://github.com/lima-vm/lima/blob/master/templates/default.yaml
+#
+# Usage:
+#   $ limactl start vm.yaml
+#   $ limactl shell vm
+#
+# When first creating this VM, once SSH is available, you can tail the status by running:
+#   $ ssh lima-vm
+#   $ sudo tail -f /var/log/cloud-init-output.log
+
+minimumLimaVersion: 2.0.0
+
+cpus: 2
+memory: 4GiB
+disk: 10GiB
+
+images:
+  - location: "https://cloud-images.ubuntu.com/releases/questing/release-20260226/ubuntu-25.10-server-cloudimg-arm64.img"
+    arch: "aarch64"
+    digest: "sha256:ee462342e2f4827f9e6008bc17776ad14086c8b8971e4ac24e54bc2b92c139b8"
+
+mounts: []
+
+containerd:
+  system: false
+  user: false
+
+provision: []

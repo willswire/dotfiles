@@ -10,3 +10,10 @@ repos:
         entry: ./.update.sh
         language: script
         stages: [pre-commit]
+      - id: strip-zed-ssh
+        name: Strip ssh_connections from Zed settings
+        entry: bash -c 'ZED_SETTINGS="${XDG_CONFIG_HOME:-$HOME/zed/.config}/zed/settings.json" && if [ -f "$ZED_SETTINGS" ] && jq -e "has(\"ssh_connections\")" "$ZED_SETTINGS" > /dev/null 2>&1; then jq "del(.ssh_connections)" "$ZED_SETTINGS" > "$ZED_SETTINGS.tmp" && mv "$ZED_SETTINGS.tmp" "$ZED_SETTINGS" && git add "$ZED_SETTINGS"; fi'
+        language: system
+        always_run: true
+        pass_filenames: false
+        stages: [pre-commit]
