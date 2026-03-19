@@ -24,6 +24,9 @@ images:
     digest: "sha256:ee462342e2f4827f9e6008bc17776ad14086c8b8971e4ac24e54bc2b92c139b8"
 
 mounts: []
+  # - location: "{{.Home}}/Developer/some-project"
+  #   mountPoint: "{{.Home}}/some-project"
+  #   writable: true
 
 containerd:
   system: false

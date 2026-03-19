@@ -2,26 +2,14 @@
 #
 # Vanity configurations
 ##
-if [[ "$(uname -s)" == "Linux" ]]; then
-  export PROMPT='(vm) %1~ > '
-else
-  export PROMPT='%1~ > '
-fi
-
-## Platform Detection
-#
-# Set BREW_PREFIX once; everything else derives from it.
-##
-if [[ "$(uname -s)" == "Darwin" ]]; then
-    BREW_PREFIX="/opt/homebrew"
-else
-    BREW_PREFIX="/home/linuxbrew/.linuxbrew"
-fi
+export PROMPT='%1~ > '
 
 ## Homebrew
 #
 # Configurations and customizations
 ##
+BREW_PREFIX="/opt/homebrew"
+
 export HOMEBREW_NO_ENV_HINTS=1
 export HOMEBREW_BUNDLE_FILE="~/Brewfile"
 export HOMEBREW_BUNDLE_FILE_GLOBAL=$HOMEBREW_BUNDLE_FILE
@@ -57,7 +45,7 @@ brew() {
 
 ## Path
 #
-# Path things — use $HOME instead of /Users/$USER so it works everywhere
+# Path things
 ##
 typeset -U path
 path=(
@@ -155,7 +143,7 @@ alias k=kubectl
 
 ## Docker
 #
-# Completions — Docker Desktop on macOS vs system Docker on Linux
+# Completions — Docker Desktop on macOS
 ##
 if [[ -d "${HOME}/.docker/completions" ]]; then
     fpath=("${HOME}/.docker/completions" $fpath)
