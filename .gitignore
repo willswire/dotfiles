@@ -4,3 +4,6 @@
 # zed assistant things
 zed/**/conversations/
 zed/**/prompts/
+
+# aws stuff
+aws/

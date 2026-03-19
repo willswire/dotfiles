@@ -2,7 +2,11 @@
 #
 # Vanity configurations
 ##
-export PROMPT='%1~ > ';
+if [[ "$(uname -s)" == "Linux" ]]; then
+  export PROMPT='(vm) %1~ > '
+else
+  export PROMPT='%1~ > '
+fi
 
 ## Platform Detection
 #

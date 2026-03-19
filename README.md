@@ -14,10 +14,17 @@
 │       └── gh
 │           ├── config.yml
 │           └── hosts.yml
+├── ghostty
+│   └── .config
+│       └── ghostty
+│           └── config
 ├── git
 │   └── .gitconfig
 ├── homebrew
 │   └── Brewfile
+├── ssh
+│   └── .ssh
+│       └── config
 ├── zed
 │   └── .config
 │       └── zed
@@ -27,5 +34,5 @@
     ├── .hushlogin
     └── .zshrc
 
-12 directories, 13 files
+17 directories, 15 files
 ```

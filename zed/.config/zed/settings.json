@@ -5,20 +5,6 @@
     "metrics": false
   },
   "soft_wrap": "editor_width",
-  "agent": {
-    "default_profile": "write",
-    "tool_permissions": {
-      "default": "allow"
-    },
-    "inline_assistant_model": {
-      "provider": "openai",
-      "model": "gpt-5.4"
-    },
-    "default_model": {
-      "provider": "openai",
-      "model": "gpt-5.4"
-    }
-  },
   "hard_tabs": false,
   "remove_trailing_whitespace_on_save": false,
   "theme": {
