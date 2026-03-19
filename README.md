@@ -22,6 +22,10 @@
 │   └── .gitconfig
 ├── homebrew
 │   └── Brewfile
+├── lima
+│   └── .lima
+│       └── devvm
+│           └── lima.yaml
 ├── ssh
 │   └── .ssh
 │       └── config
@@ -34,5 +38,5 @@
     ├── .hushlogin
     └── .zshrc
 
-17 directories, 15 files
+20 directories, 16 files
 ```
