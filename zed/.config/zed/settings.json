@@ -1,17 +1,9 @@
 {
-  "ssh_connections": [
-    {
-      "host": "lima-vm",
-      "args": [],
-      "projects": [
-        {
-          "paths": [
-            "/home/william.guest/workspace"
-          ]
-        }
-      ]
+  "agent_servers": {
+    "claude-acp": {
+      "type": "registry"
     }
-  ],
+  },
   "disable_ai": false,
   "telemetry": {
     "diagnostics": false,
