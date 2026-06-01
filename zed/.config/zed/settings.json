@@ -4,6 +4,19 @@
       "type": "registry"
     }
   },
+  "ssh_connections": [
+    {
+      "host": "lima-vm",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/home/william.guest/workspace"
+          ]
+        }
+      ]
+    }
+  ],
   "disable_ai": false,
   "telemetry": {
     "diagnostics": false,

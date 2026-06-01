@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Editors
+.idea/
+*.swp
+*.swo
+*~
+.vscode/
+
+# Environment
+.env
+.env.local

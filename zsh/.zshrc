@@ -4,6 +4,11 @@
 ##
 export PROMPT='%1~ > '
 
+HISTFILE="${HOME}/.zsh_history"
+HISTSIZE=10000
+SAVEHIST=10000
+setopt HIST_IGNORE_DUPS HIST_IGNORE_SPACE SHARE_HISTORY
+
 ## Homebrew
 #
 # Configurations and customizations
@@ -11,17 +16,19 @@ export PROMPT='%1~ > '
 BREW_PREFIX="/opt/homebrew"
 
 export HOMEBREW_NO_ENV_HINTS=1
-export HOMEBREW_BUNDLE_FILE="~/Brewfile"
-export HOMEBREW_BUNDLE_FILE_GLOBAL=$HOMEBREW_BUNDLE_FILE
+export HOMEBREW_BUNDLE_FILE="${HOME}/Brewfile"
 
 # Lazy load brew shellenv
 if [[ -z "$HOMEBREW_PREFIX" ]]; then
     eval "$("${BREW_PREFIX}/bin/brew" shellenv)"
 fi
 
-# Load syntax highlighting (installed via brew)
+# Load syntax highlighting and autosuggestions (installed via brew)
 if [[ -f "${BREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]]; then
     source "${BREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+fi
+if [[ -f "${BREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]]; then
+    source "${BREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 fi
 
 # Lazy load completions
@@ -34,13 +41,15 @@ fi
 
 brew() {
     command brew "$@"
-    if [[ "$1" = "upgrade" ]]; then
-        command brew bundle install --upgrade
-    elif [[ "$1" = "install" ]]; then
-        command brew bundle add "$2"
-    elif [[ "$1" = "cleanup" ]]; then
-        command brew bundle -f cleanup
+    local ret=$?
+    if [[ $ret -eq 0 ]]; then
+        case "$1" in
+            install|uninstall|remove|rm|upgrade|cleanup)
+                command brew bundle dump --global --force --quiet
+                ;;
+        esac
     fi
+    return $ret
 }
 
 ## Path
@@ -90,7 +99,7 @@ cdev() {
   local target
   target="$(find "$dev_root" \
     \( -name .git -o -name node_modules -o -name .venv -o -name target -o -name dist \) -prune -false -o \
-    -type d -name "$query" -print -quit 2>/dev/null)"
+    -type d -name "$query" -print 2>/dev/null | head -1)"
   if [[ -n "$target" ]]; then
     cd "$target" || return
     return

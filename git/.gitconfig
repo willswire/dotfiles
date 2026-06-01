@@ -1,16 +1,25 @@
 [user]
 	name = William Walker
 
+[core]
+	excludesfile = ~/.gitignore_global
+
 [alias]
 	amend = commit --all --amend --no-edit
 	please = push --force-with-lease
     home = "!f() { \
         git config user.email 'w_walker@icloud.com' && \
-        git config user.signingkey '1A090154'; \
+        git config user.signingkey '1A090154' && \
+        git config --local gpg.format openpgp; \
+        git config --local --unset gpg.x509.program 2>/dev/null; \
+        true; \
     }; f"
     work = "!f() { \
         git config user.email 'william@defenseunicorns.com' && \
-        git config user.signingkey '6E8C69E8'; \
+        git config user.signingkey '6E8C69E8' && \
+        git config --local gpg.format openpgp; \
+        git config --local --unset gpg.x509.program 2>/dev/null; \
+        true; \
     }; f"
     mil = "!f() { \
         git config user.email 'william.m.walker159.ctr@us.navy.mil' && \
@@ -25,7 +34,10 @@
 	gpgsign = true
 
 [gpg]
-	program = gpg # the full path is not required
+	program = gpg
+
+[pull]
+	rebase = true
 
 [init]
 	defaultBranch = main

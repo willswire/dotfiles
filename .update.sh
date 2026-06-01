@@ -11,6 +11,3 @@ git ls-files | xargs ls -d 2>/dev/null | grep -v "README.md" | tree --fromfile -
 
 # Write the closing console block
 echo '```' >> README.md
-
-# Add README.md to staging area if it has changes
-git add README.md
