@@ -6,6 +6,7 @@ export PROMPT='%1~ > '
 
 HISTFILE="${HOME}/.zsh_history"
 HISTSIZE=10000
+# shellcheck disable=SC2034
 SAVEHIST=10000
 setopt HIST_IGNORE_DUPS HIST_IGNORE_SPACE SHARE_HISTORY
 
@@ -25,19 +26,23 @@ fi
 
 # Load syntax highlighting and autosuggestions (installed via brew)
 if [[ -f "${BREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]]; then
+    # shellcheck source=/dev/null
     source "${BREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 fi
 if [[ -f "${BREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]]; then
+    # shellcheck source=/dev/null
     source "${BREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 fi
 
 # Lazy load completions
 autoload -Uz compinit
-if [[ -n ${ZDOTDIR:-${HOME}}/.zcompdump(#qNmh+24) ]]; then
-    compinit -d ${ZDOTDIR:-${HOME}}/.zcompdump
+_zcompdump="${ZDOTDIR:-${HOME}}/.zcompdump"
+if [[ -z "$(find "$_zcompdump" -maxdepth 0 -mmin -$((24*60)) 2>/dev/null)" ]]; then
+    compinit -d "$_zcompdump"
 else
-    compinit -C -d ${ZDOTDIR:-${HOME}}/.zcompdump
+    compinit -C -d "$_zcompdump"
 fi
+unset _zcompdump
 
 brew() {
     command brew "$@"
@@ -45,7 +50,7 @@ brew() {
     if [[ $ret -eq 0 ]]; then
         case "$1" in
             install|uninstall|remove|rm|upgrade|cleanup)
-                command brew bundle dump --global --force --quiet
+                command brew bundle dump --force --quiet
                 ;;
         esac
     fi
@@ -57,6 +62,7 @@ brew() {
 # Path things
 ##
 typeset -U path
+# shellcheck disable=SC2206
 path=(
     "${HOME}/Developer/scripts"
     "${HOME}/go/bin"
@@ -73,6 +79,7 @@ export NVM_DIR="$HOME/.nvm"
 nvm() {
     unfunction nvm
     local nvm_script="${BREW_PREFIX}/opt/nvm/nvm.sh"
+    # shellcheck source=/dev/null
     [ -s "$nvm_script" ] && \. "$nvm_script"
     nvm "$@"
 }
@@ -155,5 +162,6 @@ alias k=kubectl
 # Completions — Docker Desktop on macOS
 ##
 if [[ -d "${HOME}/.docker/completions" ]]; then
+    # shellcheck disable=SC2206
     fpath=("${HOME}/.docker/completions" $fpath)
 fi
