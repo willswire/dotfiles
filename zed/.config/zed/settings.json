@@ -1,20 +1,18 @@
 {
+  "cli_default_open_behavior": "new_window",
   "agent_servers": {
     "claude-acp": {
+      "default_config_options": {
+        "mode": "plan"
+      },
       "type": "registry"
     }
   },
   "ssh_connections": [
     {
-      "host": "lima-vm",
+      "host": "zed-sandbox.orb.local",
       "args": [],
-      "projects": [
-        {
-          "paths": [
-            "/home/william.guest/workspace"
-          ]
-        }
-      ]
+      "projects": []
     }
   ],
   "disable_ai": false,

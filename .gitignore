@@ -11,3 +11,5 @@ aws/
 # claude
 !claude/.claude/CLAUDE.md
 .claude/
+AGENTS.md
+keymap.json.*

@@ -23,6 +23,7 @@
     }; f"
     mil = "!f() { \
         git config user.email 'william.m.walker159.ctr@us.navy.mil' && \
+        git config user.signingkey '76998F42' && \
         git config --local gpg.x509.program smimesign && \
         git config --local gpg.format x509; \
     }; f"

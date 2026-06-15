@@ -89,7 +89,7 @@ nvm() {
 # Less is more
 ##
 cdev() {
-  local dev_root="${HOME}/Developer"
+  local dev_root="/Volumes/Developer"
   local query="$1"
   if [[ $# -ne 1 ]]; then
     echo "Usage: cdev <directory-name|path>"
@@ -116,7 +116,7 @@ cdev() {
 }
 
 devclone() {
-  local dev_root="${HOME}/Developer"
+  local dev_root="/Volumes/Developer"
   local url="$1"
   local host repo_path rest target_dir
   if [[ $# -ne 1 ]]; then
@@ -165,3 +165,9 @@ if [[ -d "${HOME}/.docker/completions" ]]; then
     # shellcheck disable=SC2206
     fpath=("${HOME}/.docker/completions" $fpath)
 fi
+
+## Mise
+# 
+# Mise shell integration
+##
+eval "$(mise activate zsh)"
