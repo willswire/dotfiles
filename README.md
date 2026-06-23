@@ -7,7 +7,10 @@
 ├── .update.sh
 ├── claude
 │   └── .claude
-│       └── CLAUDE.md
+│       ├── CLAUDE.md
+│       └── skills
+│           └── jira-issue-writer
+│               └── SKILL.md
 ├── gh
 │   └── .config
 │       └── gh
@@ -37,5 +40,5 @@
     ├── .hushlogin
     └── .zshrc
 
-18 directories, 17 files
+20 directories, 18 files
 ```
