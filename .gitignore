@@ -8,8 +8,5 @@ zed/**/prompts/
 # aws stuff
 aws/
 
-# claude
+# Claude
 !claude/.claude/CLAUDE.md
-.claude/
-AGENTS.md
-keymap.json.*

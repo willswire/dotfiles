@@ -1,7 +1,7 @@
 tap "chainguard-dev/tap", trusted: true
 tap "defenseunicorns/tap", trusted: true
 tap "hashicorp/tap", trusted: true
-tap "instantclienttap/instantclient", trusted: true
+tap "instantclienttap/instantclient", "https://github.com/InstantClientTap/homebrew-instantclient", trusted: true
 tap "oven-sh/bun", trusted: true
 tap "willswire/tap", trusted: true
 # CLI tool for working with Architecture Decision Records
@@ -52,6 +52,8 @@ brew "just"
 brew "k3d"
 # Kubernetes CLI To Manage Your Clusters In Style!
 brew "k9s"
+# FAST Kubernetes manifests validator, with support for Custom Resources!
+brew "kubeconform"
 # Kubernetes command-line interface
 brew "kubernetes-cli"
 # Build APKs from source code
@@ -74,10 +76,14 @@ brew "pkcs11-tools"
 brew "pnpm"
 # Framework for managing multi-language pre-commit hooks
 brew "pre-commit"
+# Protocol buffers (Google's data interchange format)
+brew "protobuf"
 # Rsync for cloud storage
 brew "rclone"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Safe, concurrent, practical language
+brew "rust"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
 # S/MIME signing utility for use with Git

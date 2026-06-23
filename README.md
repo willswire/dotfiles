@@ -30,11 +30,12 @@
 ├── zed
 │   └── .config
 │       └── zed
+│           ├── AGENTS.md
 │           ├── keymap.json
 │           └── settings.json
 └── zsh
     ├── .hushlogin
     └── .zshrc
 
-18 directories, 16 files
+18 directories, 17 files
 ```
