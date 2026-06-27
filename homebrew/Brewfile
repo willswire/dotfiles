@@ -1,15 +1,12 @@
 tap "chainguard-dev/tap", trusted: true
 tap "defenseunicorns/tap", trusted: true
 tap "hashicorp/tap", trusted: true
-tap "instantclienttap/instantclient", "https://github.com/InstantClientTap/homebrew-instantclient", trusted: true
-tap "oven-sh/bun", trusted: true
+tap "homebrew/core"
 tap "willswire/tap", trusted: true
 # CLI tool for working with Architecture Decision Records
 brew "adr-tools"
 # Build OCI images from APK packages directly without Dockerfile
 brew "apko"
-# Universal Tool for DevOps and Cloud Automation
-brew "atmos"
 # General-purpose data compression with high compression ratio
 brew "xz"
 # Zstandard is a real-time compression algorithm
@@ -20,8 +17,6 @@ brew "awscli"
 brew "node"
 # AST-based pattern checker for JavaScript
 brew "eslint"
-# Play, record, convert, and stream select audio and video codecs
-brew "ffmpeg"
 # GitHub command-line tool
 brew "gh"
 # Quickly rewrite git repository history
@@ -32,8 +27,6 @@ brew "git-lfs"
 brew "git-sizer"
 # Audit git repos for secrets
 brew "gitleaks"
-# Open-source GitLab command-line tool
-brew "glab"
 # GNU Privacy Guard (OpenPGP)
 brew "gnupg"
 # Open source programming language to build simple/reliable/efficient software
@@ -52,14 +45,10 @@ brew "just"
 brew "k3d"
 # Kubernetes CLI To Manage Your Clusters In Style!
 brew "k9s"
-# FAST Kubernetes manifests validator, with support for Custom Resources!
-brew "kubeconform"
 # Kubernetes command-line interface
 brew "kubernetes-cli"
 # Build APKs from source code
 brew "melange"
-# Polyglot runtime manager (asdf rust clone)
-brew "mise"
 # Manage multiple Node.js versions
 brew "nvm"
 # Tools and libraries for smart cards
@@ -72,18 +61,12 @@ brew "oras"
 brew "pandoc"
 # Tools to manage objects on PKCS#11 crypotographic tokens
 brew "pkcs11-tools"
-# Fast, disk space efficient package manager
-brew "pnpm"
 # Framework for managing multi-language pre-commit hooks
 brew "pre-commit"
-# Protocol buffers (Google's data interchange format)
-brew "protobuf"
 # Rsync for cloud storage
 brew "rclone"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
-# Safe, concurrent, practical language
-brew "rust"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
 # S/MIME signing utility for use with Git
@@ -92,8 +75,6 @@ brew "smimesign"
 brew "sops"
 # Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
-# CLI for out-of-band management of Kubernetes nodes created by Talos
-brew "talosctl"
 # Tool to generate documentation from Terraform modules
 brew "terraform-docs"
 # Linter for Terraform files
@@ -108,14 +89,10 @@ brew "uv"
 brew "watch"
 # Internet file retriever
 brew "wget"
-# Why is this running?
-brew "witr"
 # Little beautifier tool for xcodebuild
 brew "xcbeautify"
 # Build server protocol implementation for integrating Xcode with sourcekit-lsp
 brew "xcode-build-server"
-# XML command-line utilities
-brew "xmlstarlet"
 # Linter for YAML files
 brew "yamllint"
 # Process YAML, JSON, XML, CSV and properties documents from the CLI
@@ -124,24 +101,12 @@ brew "yq"
 brew "zsh-autosuggestions"
 # Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
-# The Unicorn Task Runner
-brew "defenseunicorns/tap/maru"
-# A simple task runner
-brew "defenseunicorns/tap/maru2"
 # CLI for Unicorn Delivery Service
 brew "defenseunicorns/tap/uds"
 # The Airgap Native Packager Manager for Kubernetes
 brew "defenseunicorns/tap/zarf"
 # Packer
 brew "hashicorp/tap/packer"
-# Oracle Instant Client Basic x64
-brew "instantclienttap/instantclient/instantclient-basic"
-# Oracle Instant Client SQLPlus x64
-brew "instantclienttap/instantclient/instantclient-sqlplus"
-# Oracle Instant Client Tools x64
-brew "instantclienttap/instantclient/instantclient-tools"
-# Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
-brew "oven-sh/bun/bun"
 # rolesanywhere-credential-helper implements the signing process for IAM Roles Anywhere
 brew "willswire/tap/aws_signing_helper"
 # Ultra-fast static analysis tool for searching code patterns across 30+ languages
@@ -152,12 +117,4 @@ brew "willswire/tap/teemoji"
 cask "1password-cli"
 # Plugin for AWS CLI to start and end sessions that connect to managed instances
 cask "session-manager-plugin"
-go "github.com/google/addlicense"
-go "github.com/willswire/keel"
-go "github.com/chainguard-dev/yam"
-npm "@j-ulrich/release-it-regex-bumper"
-npm "@release-it/bumper"
-npm "@release-it/conventional-changelog"
-npm "conventional-changelog-conventionalcommits"
-npm "conventional-changelog"
-npm "release-it"
+cargo "tree-sitter-cli"
