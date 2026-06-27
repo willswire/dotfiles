@@ -49,6 +49,8 @@ brew "k9s"
 brew "kubernetes-cli"
 # Build APKs from source code
 brew "melange"
+# Polyglot runtime manager (asdf rust clone)
+brew "mise"
 # Manage multiple Node.js versions
 brew "nvm"
 # Tools and libraries for smart cards
