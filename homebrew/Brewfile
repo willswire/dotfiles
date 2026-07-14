@@ -13,6 +13,10 @@ brew "xz"
 brew "zstd"
 # Official Amazon AWS command-line interface
 brew "awscli"
+# Bourne-Again SHell, a UNIX command interpreter
+brew "bash"
+# Test your configuration files using Open Policy Agent
+brew "conftest"
 # Open-source, cross-platform JavaScript runtime environment
 brew "node"
 # AST-based pattern checker for JavaScript

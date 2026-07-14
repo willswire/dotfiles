@@ -1,20 +1,8 @@
 {
-  "context_servers": {
-    "some-mcp-server": {
-      "enabled": true,
-      "remote": false,
-      "command": "/Users/william/.uds/bin/uds-mcp-server",
-      "args": [],
-      "env": {}
-    }
-  },
+  "diff_view_style": "split",
   "cli_default_open_behavior": "new_window",
   "agent_servers": {
-    "claude-acp": {
-      "default_config_options": {
-        "model": "sonnet",
-        "mode": "default"
-      },
+    "codex-acp": {
       "type": "registry"
     }
   },
@@ -22,18 +10,8 @@
     {
       "host": "zed-sandbox.orb.local",
       "args": [],
-      "projects": [
-        {
-          "paths": [
-            "/mnt/mac/Volumes/Developer/github.com/defenseunicorns-labs/compose-bridge-uds"
-          ]
-        }
-      ]
-    },
-    {
-      "host": "orb",
-      "args": [],
-      "projects": []
+      "projects": [],
+      "nickname": "zed-sandbox"
     }
   ],
   "disable_ai": false,
